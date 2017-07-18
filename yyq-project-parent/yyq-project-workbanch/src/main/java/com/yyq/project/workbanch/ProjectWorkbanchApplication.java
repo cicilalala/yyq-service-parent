@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YyqProjectWorkbanchApplication {
+public class ProjectWorkbanchApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YyqProjectWorkbanchApplication.class, args);
+		SpringApplication.run(ProjectWorkbanchApplication.class, args);
 	}
 }

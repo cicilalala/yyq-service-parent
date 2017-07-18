@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YyqCloudGatewayApplication {
+public class CloudGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YyqCloudGatewayApplication.class, args);
+		SpringApplication.run(CloudGatewayApplication.class, args);
 	}
 }

@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class YyqDataSecondlyServiceApplicationTests {
+public class DataSecondlyServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {

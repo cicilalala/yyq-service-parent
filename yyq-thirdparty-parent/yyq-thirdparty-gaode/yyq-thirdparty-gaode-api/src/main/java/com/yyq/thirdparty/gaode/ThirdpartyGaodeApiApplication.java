@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YyqThirdpartyGaodeApiApplication {
+public class ThirdpartyGaodeApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YyqThirdpartyGaodeApiApplication.class, args);
+		SpringApplication.run(ThirdpartyGaodeApiApplication.class, args);
 	}
 }

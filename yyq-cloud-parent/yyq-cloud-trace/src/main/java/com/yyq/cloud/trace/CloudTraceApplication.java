@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YyqCloudTraceApplication {
+public class CloudTraceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YyqCloudTraceApplication.class, args);
+		SpringApplication.run(CloudTraceApplication.class, args);
 	}
 }

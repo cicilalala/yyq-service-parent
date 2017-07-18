@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YyqDataMongoServiceApplication {
+public class DataMongoServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YyqDataMongoServiceApplication.class, args);
+		SpringApplication.run(DataMongoServiceApplication.class, args);
 	}
 }

@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class YyqDataMongoServiceApplicationTests {
+public class DataMongoServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {

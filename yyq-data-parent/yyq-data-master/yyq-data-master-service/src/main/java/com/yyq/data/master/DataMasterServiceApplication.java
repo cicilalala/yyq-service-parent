@@ -4,9 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YyqDataMasterServiceApplication {
+public class DataMasterServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(YyqDataMasterServiceApplication.class, args);
+		SpringApplication.run(DataMasterServiceApplication.class, args);
 	}
 }

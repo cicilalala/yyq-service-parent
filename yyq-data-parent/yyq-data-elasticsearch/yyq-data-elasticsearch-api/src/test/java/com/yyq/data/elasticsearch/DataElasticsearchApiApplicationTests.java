@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class YyqDataElasticsearchApiApplicationTests {
+public class DataElasticsearchApiApplicationTests {
 
 	@Test
 	public void contextLoads() {
