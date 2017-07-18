@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>yyq-cloud-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>yyq-cloud-parent</name>
+	<description>yyq-cloud-parent</description>
+
+	<parent>
+		<groupId>com.yyq</groupId>
+		<artifactId>yyq-service-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<modules>
+		<module>yyq-cloud-admin</module>
+		<module>yyq-cloud-config</module>
+		<module>yyq-cloud-discovery</module>
+		<module>yyq-cloud-gateway</module>
+		<module>yyq-cloud-monitor</module>
+		<module>yyq-cloud-trace</module>
+	</modules>
+
+</project>
