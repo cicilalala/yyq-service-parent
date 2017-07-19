@@ -23,6 +23,26 @@
 	</properties>
 
 	<dependencies>
+		<!--Local API-->
+		<dependency>
+			<groupId>com.yyq</groupId>
+			<artifactId>yyq-base-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yyq</groupId>
+			<artifactId>yyq-base-support</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.yyq</groupId>
+			<artifactId>yyq-data-elasticsearch-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!--Spring Boot-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>

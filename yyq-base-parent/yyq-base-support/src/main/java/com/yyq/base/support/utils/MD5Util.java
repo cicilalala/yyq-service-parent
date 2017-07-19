@@ -1,7 +1,42 @@
 package com.yyq.base.support.utils;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  * Created by yangyunqi on 2017/7/18.
  */
 public class MD5Util {
+
+    private static final String SALT = "password";
+
+    public static String encode(String password) {
+
+        String password1 = password + SALT;
+        MessageDigest md5 = null;
+
+        try {
+            md5 = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        char[] charArray = password1.toCharArray();
+        byte[] byteArray = new byte[charArray.length];
+
+        for (int i = 0; i < charArray.length; i++)
+            byteArray[i] = (byte) charArray[i];
+
+        byte[] md5Bytes = md5.digest(byteArray);
+        StringBuilder hexValue = new StringBuilder();
+
+        for (byte md5Byte : md5Bytes) {
+            int val = ((int) md5Byte) & 0xff;
+            if (val < 16) {
+                hexValue.append("0");
+            }
+            hexValue.append(Integer.toHexString(val));
+        }
+        return hexValue.toString();
+    }
 }

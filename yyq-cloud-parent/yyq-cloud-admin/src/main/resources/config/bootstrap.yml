@@ -1,0 +1,22 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: yyq-cloud-admin
+  profiles:
+    active: local
+  cloud:
+    config:
+      name: adminCloud
+      uri: http://localhost:8888
+management:
+  security:
+    enabled: false
+eureka:
+  instance:
+    non-secure-port: ${server.port:8090}
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+    registry-fetch-interval-seconds: 5

@@ -1,0 +1,33 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: yyq-cloud-gateway
+  profiles:
+    active: local
+  cloud:
+    config:
+      name: gatewayCloud
+      uri: http://localhost:8888
+  boot:
+    admin:
+      url: http://localhost:8090
+  zipkin:
+    base-url: http://localhost:9411/
+management:
+  security:
+    enabled: false
+eureka:
+  instance:
+    non-secure-port: ${server.port:8000}
+    lease-renewal-interval-in-seconds: 10
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+    registry-fetch-interval-seconds: 5
+
+zuul:
+  prefix: /api
+  host:
+    max-per-route-connections: 200
+    max-total-connections: 200

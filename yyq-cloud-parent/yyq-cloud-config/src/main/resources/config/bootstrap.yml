@@ -1,0 +1,23 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: yyq-cloud-config
+  profiles:
+    active: local
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SuperTotoroOS/yyq-config-parent
+          username: rickyyoung618@gmail.com
+          password: yyq819705
+management:
+  security:
+    enabled: false
+eureka:
+  instance:
+    non-secure-port: ${server.port:8888}
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

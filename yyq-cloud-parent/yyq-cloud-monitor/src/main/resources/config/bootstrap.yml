@@ -1,0 +1,23 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: yyq-cloud-monitor
+  boot:
+    admin:
+      url: http://localhost:8090
+  cloud:
+    config:
+      name: monitorCloud
+      uri: http://localhost:8888
+  profiles:
+    active: local
+management:
+  security:
+    enabled: false
+eureka:
+  instance:
+    non-secure-port: ${server.port:8099}
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

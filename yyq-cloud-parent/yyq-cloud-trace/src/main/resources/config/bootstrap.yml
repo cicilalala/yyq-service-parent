@@ -1,0 +1,23 @@
+server:
+  port: 9411
+spring:
+  application:
+    name: yyq-cloud-trace
+  boot:
+    admin:
+      url: http://localhost:8090
+  cloud:
+    config:
+      name: traceCloud
+      uri: http://localhost:8888
+  profiles:
+    active: local
+management:
+  security:
+    enabled: false
+eureka:
+  instance:
+    non-secure-port: ${server.port:9411}
+  client:
+    service-url:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
