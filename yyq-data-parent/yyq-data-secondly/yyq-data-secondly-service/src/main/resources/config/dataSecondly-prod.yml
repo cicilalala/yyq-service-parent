@@ -7,7 +7,9 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
 logging:
   level:
-    org.springframework.security: info
+    root: info
+    com.yyq.data.master.repository: debug
+    com.yyq.data.master.web: info

@@ -10,4 +10,6 @@ spring:
     show-sql: true
 logging:
   level:
-    org.springframework.security: info
+    root: info
+    com.yyq.data.master.repository: debug
+    com.yyq.data.master.web: info

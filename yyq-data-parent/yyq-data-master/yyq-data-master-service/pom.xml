@@ -53,12 +53,13 @@
 			<artifactId>spring-cloud-config-client</artifactId>
 		</dependency>
 
+		<!--zipkin client-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 
-		<!--spring boot-->
+		<!--spring boot admin-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-actuator</artifactId>
@@ -69,6 +70,7 @@
 			<artifactId>spring-boot-admin-starter-client</artifactId>
 		</dependency>
 
+		<!--spring boot base-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -78,6 +80,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 
 		<dependency>
@@ -139,6 +146,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

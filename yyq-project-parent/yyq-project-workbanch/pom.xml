@@ -54,7 +54,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<!--spring cloud-->
+		<!--spring cloud base-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
@@ -63,6 +63,8 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-client</artifactId>
 		</dependency>
+
+		<!--spring cloud client-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-ribbon</artifactId>
@@ -76,7 +78,7 @@
 			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
 
-		<!--spring boot-->
+		<!--spring boot admin-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-actuator</artifactId>
@@ -87,11 +89,13 @@
 			<artifactId>spring-boot-admin-starter-client</artifactId>
 		</dependency>
 
+		<!--zipkin client-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
 
+		<!--spring boot base-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -105,9 +109,15 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
+		<!--spring boot security-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
