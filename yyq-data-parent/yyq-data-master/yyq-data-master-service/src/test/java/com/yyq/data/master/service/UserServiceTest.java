@@ -18,7 +18,7 @@ public class UserServiceTest {
     private UserService userService;
 
 //    @Test
-//    public void selectById() throws Exception {
+//    public void selectById() throws exception {
 //        User user = userService.selectById(34L);
 //        log.info(user.toJSONString());
 //    }

@@ -27,3 +27,4 @@ logging:
     root: info
     com.yyq.data.master.repository: debug
     com.yyq.data.master.web: info
+

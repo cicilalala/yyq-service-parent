@@ -3,6 +3,7 @@ package com.yyq.data.master.config;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,11 +16,12 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @Configuration
-@MapperScan(basePackages = ClusterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "clusterSqlSessionFactory")
+@MapperScan(basePackages = ClusterDataSourceConfig.PACKAGE, sqlSessionTemplateRef = "clusterSqlSessionTemplate", sqlSessionFactoryRef = "clusterSqlSessionFactory")
 public class ClusterDataSourceConfig {
 
     static final String PACKAGE = "com.yyq.data.master.repository.cluster";
-    static final String MAPPER_LOCATION = "classpath:mapper/*.xml";
+    private static final String MAPPER_LOCATION = "classpath:mapper/*.xml";
+
     @Value("${cluster.datasource.url}")
     private String url;
     @Value("${cluster.datasource.username}")
@@ -65,16 +67,21 @@ public class ClusterDataSourceConfig {
     }
 
     @Bean
-    public DataSourceTransactionManager clusterTransactionManager() {
-        return new DataSourceTransactionManager(clusterDataSource());
-    }
-
-    @Bean
     public SqlSessionFactory clusterSqlSessionFactory(@Qualifier("clusterDataSource") DataSource clusterDataSource)
             throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(clusterDataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(ClusterDataSourceConfig.MAPPER_LOCATION));
         return sessionFactory.getObject();
+    }
+
+    @Bean
+    public DataSourceTransactionManager clusterTransactionManager(@Qualifier("clusterDataSource") DataSource clusterDataSource) {
+        return new DataSourceTransactionManager(clusterDataSource);
+    }
+
+    @Bean
+    public SqlSessionTemplate masterSqlSessionTemplate(@Qualifier("clusterSqlSessionFactory") SqlSessionFactory clusterSqlSessionFactory) throws Exception {
+        return new SqlSessionTemplate(clusterSqlSessionFactory);
     }
 }

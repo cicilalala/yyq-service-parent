@@ -5,6 +5,7 @@ import com.yyq.data.secondly.domain.AuthUser;
 import com.yyq.project.workbanch.api.data.master.UserAPI;
 import com.yyq.project.workbanch.api.data.secondly.AuthUserAPI;
 import com.yyq.project.workbanch.dto.SecurityUser;
+import com.yyq.project.workbanch.exception.UserException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -29,6 +30,8 @@ public class UserService implements UserDetailsService {
         User user = userAPI.initializeUser(mobile, email, password, trueName);
         if (user != null) {
             authUserAPI.initializeAuthUser(user.getUsername(), user.getPassword(), user.getNickName(), user.getAvatar());
+        } else {
+            throw new UserException(500, "User Can Not Bind");
         }
         return user;
     }

@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: mongo_save
+      grid-fs-database: mongo_files_save
+  http:
+    multipart:
+      max-file-size: 500Mb
+      max-request-size: 500Mb
+logging:
+  level:
+    root: info
+    com.yyq.data.doc.web: info

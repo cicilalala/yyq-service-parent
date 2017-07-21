@@ -24,8 +24,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>com.yyq</groupId>
+			<artifactId>yyq-base-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 			<optional>true</optional>
 		</dependency>
 	</dependencies>

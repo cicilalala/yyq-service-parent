@@ -5,6 +5,7 @@ import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,11 +24,11 @@ import java.sql.SQLException;
  * Created by yangyunqi on 2017/5/11.
  */
 @Configuration
-@MapperScan(basePackages = MasterDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "masterSqlSessionFactory")
+@MapperScan(basePackages = MasterDataSourceConfig.PACKAGE, sqlSessionTemplateRef = "masterSqlSessionTemplate", sqlSessionFactoryRef = "masterSqlSessionFactory")
 public class MasterDataSourceConfig {
 
     static final String PACKAGE = "com.yyq.data.master.repository.master";
-    static final String MAPPER_LOCATION = "classpath:mapper/*.xml";
+    private static final String MAPPER_LOCATION = "classpath:mapper/*.xml";
 
     @Value("${master.datasource.url}")
     private String url;
@@ -67,13 +68,13 @@ public class MasterDataSourceConfig {
 
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new WebStatFilter());
         filterRegistrationBean.addUrlPatterns("/*");
-        filterRegistrationBean.addInitParameter("exclusions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+        filterRegistrationBean.addInitParameter("exclusions","*.js,*.css,*.gif,*.jpg,*.png,*.ico,/druid/*");
         return filterRegistrationBean;
 
     }
 
-    @Primary
     @Bean
+    @Primary
     public DataSource masterDataSource() {
 
         DruidDataSource dataSource = new DruidDataSource();
@@ -96,19 +97,25 @@ public class MasterDataSourceConfig {
         return dataSource;
     }
 
-    @Primary
     @Bean
-    public DataSourceTransactionManager masterTransactionManager() {
-        return new DataSourceTransactionManager(masterDataSource());
-    }
-
     @Primary
-    @Bean
     public SqlSessionFactory masterSqlSessionFactory(@Qualifier("masterDataSource") DataSource masterDataSource) throws Exception {
 
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(masterDataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(MasterDataSourceConfig.MAPPER_LOCATION));
         return sessionFactory.getObject();
+    }
+
+    @Bean
+    @Primary
+    public DataSourceTransactionManager masterTransactionManager(@Qualifier("masterDataSource") DataSource masterDataSource) {
+        return new DataSourceTransactionManager(masterDataSource);
+    }
+
+    @Bean
+    @Primary
+    public SqlSessionTemplate masterSqlSessionTemplate(@Qualifier("masterSqlSessionFactory") SqlSessionFactory masterSqlSessionFactory) throws Exception {
+        return new SqlSessionTemplate(masterSqlSessionFactory);
     }
 }

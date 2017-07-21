@@ -25,5 +25,6 @@ cluster:
 logging:
   level:
     root: info
-    com.yyq.data.master.repository: info
+    com.yyq.data.master.repository: debug
     com.yyq.data.master.web: info
+
