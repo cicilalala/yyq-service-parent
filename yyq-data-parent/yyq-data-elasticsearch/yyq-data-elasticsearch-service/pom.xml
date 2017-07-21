@@ -115,6 +115,7 @@
 			<artifactId>fastjson</artifactId>
 		</dependency>
 
+		<!--elasticsearch-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
@@ -129,6 +130,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
