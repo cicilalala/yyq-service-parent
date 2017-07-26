@@ -3,25 +3,22 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>yyq-data-parent</artifactId>
+	<artifactId>yyq-data-neo4j</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>yyq-data-parent</name>
-	<description>yyq-data-parent</description>
+	<name>yyq-data-neo4j</name>
+	<description>yyq-data-neo4j</description>
 
 	<parent>
 		<groupId>com.yyq</groupId>
-		<artifactId>yyq-service-parent</artifactId>
+		<artifactId>yyq-data-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<modules>
-		<module>yyq-data-master</module>
-		<module>yyq-data-secondly</module>
-		<module>yyq-data-mongo</module>
-		<module>yyq-data-elasticsearch</module>
-		<module>yyq-data-neo4j</module>
+		<module>yyq-data-neo4j-api</module>
+		<module>yyq-data-neo4j-service</module>
 	</modules>
 
 </project>

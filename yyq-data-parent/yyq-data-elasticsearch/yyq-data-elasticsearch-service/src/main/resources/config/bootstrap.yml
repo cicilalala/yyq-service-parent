@@ -1,5 +1,5 @@
 server:
-  port: 11002
+  port: 11003
 spring:
   application:
     name: yyq-data-elasticsearch
@@ -19,7 +19,7 @@ management:
     enabled: false
 eureka:
   instance:
-    non-secure-port: ${server.port:11002}
+    non-secure-port: ${server.port:11003}
   client:
     service-url:
       defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
