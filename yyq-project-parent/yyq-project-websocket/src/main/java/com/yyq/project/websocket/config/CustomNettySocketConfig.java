@@ -12,12 +12,14 @@ import org.springframework.context.annotation.Bean;
 @org.springframework.context.annotation.Configuration
 public class CustomNettySocketConfig {
 
+    private static final String HOST = "localhost";
+    private static final Integer PORT = 10110;
+
     @Bean
     public SocketIOServer socketIOServer() {
         Configuration configuration = new Configuration();
-        configuration.setHostname("localhost");
-        configuration.setPort(10110);
-
+        configuration.setHostname(HOST);
+        configuration.setPort(PORT);
         return new SocketIOServer(configuration);
     }
 
