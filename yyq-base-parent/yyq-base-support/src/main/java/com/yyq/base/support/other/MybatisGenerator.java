@@ -89,7 +89,7 @@ public class MybatisGenerator {
         //配置实体
         JavaModelGeneratorConfiguration javaModelGeneratorConfiguration = new JavaModelGeneratorConfiguration();
         javaModelGeneratorConfiguration.setTargetPackage(map.get("targetDomainPackage"));
-        javaModelGeneratorConfiguration.setTargetProject("/Users/yangyunqi/Documents/Workspace/yyq-service-parent/yyq-data-parent/yyq-data-master/yyq-data-master-api/src/main/java");
+        javaModelGeneratorConfiguration.setTargetProject("/Users/yangyunqi/Documents/yyq-service-parent/yyq-data-parent/yyq-data-master/yyq-data-master-api/src/main/java");
         javaModelGeneratorConfiguration.addProperty("constructorBased", "true");
         javaModelGeneratorConfiguration.addProperty("enableSubPackages", "true");
         javaModelGeneratorConfiguration.addProperty("trimStrings", "true");
@@ -99,7 +99,7 @@ public class MybatisGenerator {
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration = new SqlMapGeneratorConfiguration();
         sqlMapGeneratorConfiguration.setTargetPackage("mapper");
 
-        sqlMapGeneratorConfiguration.setTargetProject("/Users/yangyunqi/Documents/Workspace/yyq-service-parent/yyq-data-parent/yyq-data-master/yyq-data-master-service/src/main/resources");
+        sqlMapGeneratorConfiguration.setTargetProject("/Users/yangyunqi/Documents/yyq-service-parent/yyq-data-parent/yyq-data-master/yyq-data-master-service/src/main/resources");
         sqlMapGeneratorConfiguration.addProperty("enableSubPackages", "true");
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
 
@@ -108,7 +108,7 @@ public class MybatisGenerator {
         javaClientGeneratorConfiguration.setConfigurationType("XMLMAPPER");
         javaClientGeneratorConfiguration.setTargetPackage(map.get("targetRepositoryPackage"));
 
-        javaClientGeneratorConfiguration.setTargetProject("/Users/yangyunqi/Documents/Workspace/yyq-service-parent/yyq-data-parent/yyq-data-master/yyq-data-master-service/src/main/java");
+        javaClientGeneratorConfiguration.setTargetProject("/Users/yangyunqi/Documents/yyq-service-parent/yyq-data-parent/yyq-data-master/yyq-data-master-service/src/main/java");
         context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
 
         //配置表
@@ -129,6 +129,6 @@ public class MybatisGenerator {
 
     public static void main(String[] args) {
         MybatisGenerator mybatisGenerator = new MybatisGenerator();
-        mybatisGenerator.mybatisGenerator("user", MybatisGenerator.MASTERDB);
+        mybatisGenerator.mybatisGenerator("user_role", MybatisGenerator.MASTERDB);
     }
 }

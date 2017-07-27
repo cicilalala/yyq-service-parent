@@ -18,6 +18,7 @@
 
 	<modules>
 		<module>yyq-project-workbanch</module>
+		<module>yyq-project-websocket</module>
 	</modules>
 
 </project>

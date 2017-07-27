@@ -3,6 +3,7 @@ package com.yyq.data.master.domain.master;
 import com.yyq.base.api.model.BaseModel;
 
 import java.util.Date;
+import java.util.List;
 
 public class User extends BaseModel<User> {
     private static final long serialVersionUID = 8153529389025787235L;
@@ -28,6 +29,8 @@ public class User extends BaseModel<User> {
 
     private Date updateTime;
 
+    private List<UserRole> roles;
+
     public User(Long id, String username, String password, String mobile, String email, String address, String trueName, String nickName, String avatar, Date createTime, Date updateTime) {
         this.id = id;
         this.username = username;
@@ -44,6 +47,15 @@ public class User extends BaseModel<User> {
 
     public User() {
         super();
+    }
+
+    public List<UserRole> getRoles() {
+        return roles;
+    }
+
+    public User setRoles(List<UserRole> roles) {
+        this.roles = roles;
+        return this;
     }
 
     public Long getId() {
