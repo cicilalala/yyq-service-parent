@@ -6,7 +6,3 @@ spring:
 #      cluster-nodes: 123.57.68.250:9300
       repositories:
         enabled: true
-      properties:
-        path:
-          logs: ./elasticsearch/log
-          data: ./elasticsearch/data
