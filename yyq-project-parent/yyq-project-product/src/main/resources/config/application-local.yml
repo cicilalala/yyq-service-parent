@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/clusterDB?characterEncoding=UTF-8&userSSL=false
+    username: root
+    password: admin123
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true

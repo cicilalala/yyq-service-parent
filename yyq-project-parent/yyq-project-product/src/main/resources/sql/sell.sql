@@ -5,6 +5,7 @@ CREATE TABLE `product_info` (
   `product_stock` INT NOT NULL,
   `product_description` VARCHAR(64),
   `product_icon` VARCHAR(512),
+  `product_status` INT NOT NULL,
   `category_type` INT NOT NULL,
   `create_time` TIMESTAMP  NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
