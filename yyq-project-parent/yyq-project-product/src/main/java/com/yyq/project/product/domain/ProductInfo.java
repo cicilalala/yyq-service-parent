@@ -1,8 +1,6 @@
 package com.yyq.project.product.domain;
 
-import com.yyq.base.api.model.BaseModel;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
@@ -15,17 +13,23 @@ import java.math.BigDecimal;
 @Entity
 @Data
 @Accessors(chain = true)
-@EqualsAndHashCode(callSuper = true)
-public class ProductInfo extends BaseModel<ProductInfo> {
+public class ProductInfo {
 
     @Id
     private String productId;
+
     private String productName;
+
     private BigDecimal productPrice;
+
     private Integer productStock;
+
     private String productDescription;
+
     private String productIcon;
+
     private Integer productStatus;
+
     private Integer categoryType;
 
     public ProductInfo() {

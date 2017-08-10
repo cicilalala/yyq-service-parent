@@ -23,28 +23,28 @@ public class ProductCategoryRepositoryTest {
     private ProductCategoryRepository productCategoryRepository;
 
     @Test
-    public void findOneTest() {
+    public void findOne() throws Exception {
         ProductCategory result = productCategoryRepository.findOne(1);
         Assert.assertNotNull(result);
     }
 
     @Test
     @Transactional // 在Test方法中，无论如何也会回滚
-    public void saveTest() {
+    public void save() throws Exception {
         ProductCategory productCategory = new ProductCategory("纪实", 2);
         ProductCategory result = productCategoryRepository.save(productCategory);
         Assert.assertNotNull(result);
     }
 
     @Test
-    public void updateTest() {
+    public void update() throws Exception {
         ProductCategory productCategory = productCategoryRepository.findOne(2);
         ProductCategory result = productCategory.setCategoryType(100);
         Assert.assertNotNull(result);
     }
 
     @Test
-    public void findByCategoryTypeInTest() {
+    public void findByCategoryTypeIn() throws Exception {
         List<ProductCategory> result = productCategoryRepository.findByCategoryTypeIn(Arrays.asList(2, 3, 4));
         Assert.assertNotEquals(0, result.size());
     }

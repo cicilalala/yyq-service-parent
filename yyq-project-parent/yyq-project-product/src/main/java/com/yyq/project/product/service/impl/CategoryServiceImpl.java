@@ -2,7 +2,7 @@ package com.yyq.project.product.service.impl;
 
 import com.yyq.project.product.domain.ProductCategory;
 import com.yyq.project.product.repository.ProductCategoryRepository;
-import com.yyq.project.product.service.ProductCategoryService;
+import com.yyq.project.product.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * Created by yangyunqi on 2017/7/28.
  */
 @Service
-public class ProductCategoryServiceImpl implements ProductCategoryService {
+public class CategoryServiceImpl implements CategoryService {
 
     @Autowired
     private ProductCategoryRepository productCategoryRepository;

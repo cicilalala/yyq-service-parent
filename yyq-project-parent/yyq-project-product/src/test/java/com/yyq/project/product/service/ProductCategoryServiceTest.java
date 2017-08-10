@@ -11,8 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by yangyunqi on 2017/7/28.
  */
@@ -21,7 +19,7 @@ import static org.junit.Assert.*;
 public class ProductCategoryServiceTest {
 
     @Autowired
-    private ProductCategoryService productCategoryService;
+    private CategoryService productCategoryService;
 
     @Test
     public void findOne() throws Exception {

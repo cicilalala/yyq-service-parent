@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by yangyunqi on 2017/7/28.
  */
-public interface ProductCategoryService {
+public interface CategoryService {
 
     ProductCategory findOne(Integer categoryId);
 

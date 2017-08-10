@@ -27,24 +27,24 @@ import static org.junit.Assert.*;
 public class ProductInfoServiceTest {
 
     @Autowired
-    private ProductInfoService productInfoService;
+    private ProductService productService;
 
     @Test
     public void findOne() throws Exception {
-        ProductInfo result = productInfoService.findOne("c199c9ed8b974e7da6da3fda372ddf36");
+        ProductInfo result = productService.findOne("c199c9ed8b974e7da6da3fda372ddf36");
         Assert.assertEquals("c199c9ed8b974e7da6da3fda372ddf36", result.getProductId());
     }
 
     @Test
     public void findUpAll() throws Exception {
-        List<ProductInfo> result = productInfoService.findUpAll();
+        List<ProductInfo> result = productService.findUpAll();
         Assert.assertNotEquals(0, result.size());
     }
 
     @Test
     public void findAll() throws Exception {
         PageRequest pageRequest = new PageRequest(0, 2);
-        Page<ProductInfo> page = productInfoService.findAll(pageRequest);
+        Page<ProductInfo> page = productService.findAll(pageRequest);
         log.info("" + page.getTotalElements());
     }
 
@@ -53,14 +53,14 @@ public class ProductInfoServiceTest {
         ProductInfo productInfo = new ProductInfo();
         productInfo
                 .setProductId(StrUtil.randomUUID())
-                .setProductName("javascript")
+                .setProductName("math")
                 .setProductDescription("basic")
                 .setProductIcon("xxx.jpg")
-                .setProductPrice(new BigDecimal(50))
-                .setCategoryType(1)
-                .setProductStatus(ProductStatusEnum.DOWN.getCode())
-                .setProductStock(100);
-        ProductInfo result = productInfoService.save(productInfo);
+                .setProductPrice(new BigDecimal(64))
+                .setCategoryType(2)
+                .setProductStatus(ProductStatusEnum.UP.getCode())
+                .setProductStock(299);
+        ProductInfo result = productService.save(productInfo);
         Assert.assertNotNull(result);
     }
 

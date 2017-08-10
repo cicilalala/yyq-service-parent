@@ -27,7 +27,7 @@ public class ProductInfoRepositoryTest {
     private ProductInfoRepository productInfoRepository;
 
     @Test
-    public void saveTest() throws Exception {
+    public void save() throws Exception {
         ProductInfo productInfo = new ProductInfo();
         productInfo
                 .setProductId(StrUtil.randomUUID())
@@ -43,7 +43,7 @@ public class ProductInfoRepositoryTest {
     }
 
     @Test
-    public void findByProductStatusTest() throws Exception {
+    public void findByProductStatus() throws Exception {
         List<ProductInfo> result = productInfoRepository.findByProductStatus(1);
         Assert.assertNotEquals(0, result.size());
     }

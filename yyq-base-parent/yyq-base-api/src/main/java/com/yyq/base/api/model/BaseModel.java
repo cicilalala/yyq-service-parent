@@ -44,6 +44,10 @@ public class BaseModel<T> implements Serializable {
         return jsonObject;
     }
 
+    public String toJSONString() {
+        return JSON.toJSONString(this);
+    }
+
     @Override
     public String toString() {
         try {
@@ -53,10 +57,6 @@ public class BaseModel<T> implements Serializable {
         }
 
         return this.toString();
-    }
-
-    public String toJSONString() {
-        return JSON.toJSONString(this);
     }
 
     @SuppressWarnings("unchecked")

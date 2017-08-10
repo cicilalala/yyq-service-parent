@@ -4,14 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * Created by yangyunqi on 2017/7/28.
+ * Created by yangyunqi on 2017/8/3.
  */
 @Getter
 @AllArgsConstructor
-public enum ProductStatusEnum {
+public enum PayStatusEnum {
 
-    UP(0, "UP"),
-    DOWN(1, "DOWN");
+    WAIT(0, "等待支付"),
+    SUCCESS(1, "支付成功");
 
     private Integer code;
 

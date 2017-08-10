@@ -1,5 +1,5 @@
 server:
-  port: 10001
+  port: 8080
 spring:
   application:
     name: yyq-project-product
@@ -19,7 +19,7 @@ management:
     enabled: false
 eureka:
   instance:
-    non-secure-port: ${server.port:10001}
+    non-secure-port: ${server.port:8080}
   client:
     service-url:
       defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

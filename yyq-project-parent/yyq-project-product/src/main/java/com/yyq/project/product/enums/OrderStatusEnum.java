@@ -4,14 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * Created by yangyunqi on 2017/7/28.
+ * Created by yangyunqi on 2017/8/3.
  */
 @Getter
 @AllArgsConstructor
-public enum ProductStatusEnum {
+public enum OrderStatusEnum {
 
-    UP(0, "UP"),
-    DOWN(1, "DOWN");
+    NEW(0, "新订单"),
+    FINISHED(1, "完成"),
+    CANCEL(2, "已取消");
 
     private Integer code;
 
