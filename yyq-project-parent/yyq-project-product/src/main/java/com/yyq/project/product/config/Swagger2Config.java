@@ -31,10 +31,9 @@ public class Swagger2Config {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("RESTful APIs")
-                .description("Restful APIs")
-                .termsOfServiceUrl("https://github.com/SuperTotoroOS/yyq-service-parent")
-                .contact(new Contact("Ricky", "https://github.com/SuperTotoroOS", "2334235266@qq.com"))
+                .title("慕课网商城DEMO")
+                .description("慕课网商城DEMO")
+                .contact(new Contact("杨蕴琦", "https://github.com/SuperTotoroOS/yyq-service-parent/tree/master/yyq-project-parent/yyq-project-product", "2334235266@qq.com"))
                 .version("1.0.0")
                 .build();
 
