@@ -33,7 +33,7 @@ public class Swagger2Config {
         return new ApiInfoBuilder()
                 .title("慕课网商城DEMO")
                 .description("慕课网商城DEMO")
-                .contact(new Contact("杨蕴琦", "https://github.com/SuperTotoroOS/yyq-service-parent/tree/master/yyq-project-parent/yyq-project-product", "2334235266@qq.com"))
+                .contact(new Contact("杨蕴琦", "https://github.com/SuperTotoroOS/yyq-service-parent", "2334235266@qq.com"))
                 .version("1.0.0")
                 .build();
 

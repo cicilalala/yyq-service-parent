@@ -1,6 +1,9 @@
 package com.yyq.project.product.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.yyq.project.product.domain.OrderDetails;
+import com.yyq.project.product.utils.Date2LongSerializer;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -13,6 +16,7 @@ import java.util.List;
  */
 @Data
 @Accessors(chain = true)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
 
     private String orderId;
@@ -31,9 +35,12 @@ public class OrderDTO {
 
     private Integer payStatus;
 
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
 
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
+
 
     private List<OrderDetails> orderDetailsList;
 

@@ -6,5 +6,9 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
   jpa:
     show-sql: true
+
+# 返回结果不含null
+  jackson:
+    default-property-inclusion: non_null
 server:
   context-path: /sell/

@@ -6,6 +6,7 @@ import com.yyq.project.product.dto.OrderDTO;
 import com.yyq.project.product.enums.ResultEnum;
 import com.yyq.project.product.exception.SellException;
 import com.yyq.project.product.form.OrderForm;
+import com.yyq.project.product.service.BuyerService;
 import com.yyq.project.product.service.OrderService;
 import com.yyq.project.product.utils.ResultVOUtil;
 import io.swagger.annotations.Api;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -36,6 +38,9 @@ public class BuyerOrderController {
 
     @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private BuyerService buyerService;
 
     @PostMapping("create")
     @ApiOperation(value = "创建订单", notes = "创建订单")
@@ -62,7 +67,7 @@ public class BuyerOrderController {
     }
 
     @GetMapping("list")
-    @ApiOperation(value = "查询所有订单", notes = "查询所有订单")
+    @ApiOperation(value = "所有订单", notes = "所有订单")
     public ResultVO list(@RequestParam(value = "openid") String openid,
                          @RequestParam(value = "page", defaultValue = "0") Integer page,
                          @RequestParam(value = "size", defaultValue = "10") Integer size) {
@@ -76,5 +81,23 @@ public class BuyerOrderController {
         Page<OrderDTO> orderDTOPage = orderService.findList(openid, request);
 
         return ResultVOUtil.success(orderDTOPage.getContent());
+    }
+
+    @GetMapping("detail")
+    @ApiOperation(value = "订单详情", notes = "订单详情")
+    public ResultVO detail(@RequestParam(value = "openid") String openid,
+                           @RequestParam(value = "orderId") String orderId) {
+
+        OrderDTO orderDTO = buyerService.findOrderOne(openid, orderId);
+        return ResultVOUtil.success(orderDTO);
+    }
+
+    @PostMapping("cancel")
+    @ApiOperation(value = "取消订单", notes = "取消订单")
+    public ResultVO cancel(@RequestParam(value = "openid") String openid,
+                           @RequestParam(value = "orderId") String orderId) {
+
+        buyerService.cancelOrder(openid, orderId);
+        return ResultVOUtil.success();
     }
 }

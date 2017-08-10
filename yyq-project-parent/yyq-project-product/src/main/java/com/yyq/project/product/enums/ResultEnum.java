@@ -10,8 +10,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum ResultEnum {
 
-    SUCCESS(200, "成功"),
-    UNKNOW_ERROR(500, "未知错误"),
+    SUCCESS(0, "成功"),
+    UNKNOW_ERROR(-1, "未知错误"),
 
     PARAM_ERROR(1, "参数不正确"),
 
@@ -24,7 +24,9 @@ public enum ResultEnum {
     ORDER_DETAILS_EMPTY(16, "订单中没有商品详情"),
     ORDER_PAY_STATUS_ERROR(17, "订单支付状态不正确"),
 
-    CART_EMPTY(18, "购物车为空");
+    CART_EMPTY(18, "购物车为空"),
+
+    ORDER_OWNER_ERROR(19, "该订单不属于当前用户");
 
     private Integer code;
 
