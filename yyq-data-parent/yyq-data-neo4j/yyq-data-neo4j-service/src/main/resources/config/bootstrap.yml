@@ -1,5 +1,5 @@
 server:
-  port: 11005
+  port: 11004
 spring:
   application:
     name: yyq-data-neo4j
@@ -19,7 +19,7 @@ management:
     enabled: false
 eureka:
   instance:
-    non-secure-port: ${server.port:11005}
+    non-secure-port: ${server.port:11004}
   client:
     service-url:
       defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

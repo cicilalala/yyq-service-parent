@@ -21,6 +21,7 @@
 		<module>yyq-data-secondly</module>
 		<module>yyq-data-mongo</module>
 		<module>yyq-data-elasticsearch</module>
+		<module>yyq-data-neo4j</module>
 	</modules>
 
 </project>
