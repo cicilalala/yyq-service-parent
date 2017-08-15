@@ -14,9 +14,9 @@ import java.util.Date;
 /**
  * Created by yangyunqi on 2017/8/3.
  */
+@Data
 @Entity
 @DynamicUpdate
-@Data
 @Accessors(chain = true)
 public class OrderMaster{
 
@@ -44,7 +44,7 @@ public class OrderMaster{
     public OrderMaster() {
     }
 
-    public OrderMaster(String orderId, String buyerName, String buyerPhone, String buyerAddress, String buyerOpenid, BigDecimal orderAmount, Integer orderStatus, Integer payStatus, Date createTime, Date updateTime) {
+    public OrderMaster(String orderId, String buyerName, String buyerPhone, String buyerAddress, String buyerOpenid, BigDecimal orderAmount, Integer orderStatus, Integer payStatus) {
         this.orderId = orderId;
         this.buyerName = buyerName;
         this.buyerPhone = buyerPhone;
@@ -53,7 +53,5 @@ public class OrderMaster{
         this.orderAmount = orderAmount;
         this.orderStatus = orderStatus;
         this.payStatus = payStatus;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
     }
 }

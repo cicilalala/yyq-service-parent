@@ -8,7 +8,7 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum ProductStatusEnum {
+public enum ProductStatusEnum implements CodeEnum {
 
     UP(0, "UP"),
     DOWN(1, "DOWN");

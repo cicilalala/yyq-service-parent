@@ -76,6 +76,13 @@ public class OrderServiceTest {
     }
 
     @Test
+    public void findList1() throws Exception {
+        PageRequest request = new PageRequest(0, 5);
+        Page<OrderDTO> orderDTOPage = orderService.findList(request);
+        Assert.assertTrue("查询订单的总数", orderDTOPage.getTotalElements() > 0);
+    }
+
+    @Test
     public void cancel() throws Exception {
         OrderDTO orderDTO = orderService.findOne(ORDER_ID);
         OrderDTO result = orderService.cancel(orderDTO);

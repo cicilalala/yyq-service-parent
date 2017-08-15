@@ -1,9 +1,12 @@
 package com.yyq.project.product.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.yyq.project.product.domain.OrderDetails;
+import com.yyq.project.product.enums.OrderStatusEnum;
+import com.yyq.project.product.enums.PayStatusEnum;
 import com.yyq.project.product.utils.Date2LongSerializer;
+import com.yyq.project.product.utils.EnumUtil;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -41,7 +44,6 @@ public class OrderDTO {
     @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
 
-
     private List<OrderDetails> orderDetailsList;
 
     public OrderDTO() {
@@ -59,5 +61,15 @@ public class OrderDTO {
         this.createTime = createTime;
         this.updateTime = updateTime;
         this.orderDetailsList = orderDetailsList;
+    }
+
+    @JsonIgnore
+    public OrderStatusEnum getOrderStatusEnum() {
+        return EnumUtil.getByCode(orderStatus, OrderStatusEnum.class);
+    }
+
+    @JsonIgnore
+    public PayStatusEnum getPayStatusEnum() {
+        return EnumUtil.getByCode(payStatus, PayStatusEnum.class);
     }
 }

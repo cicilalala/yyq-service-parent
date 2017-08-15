@@ -7,13 +7,14 @@ import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * Created by yangyunqi on 2017/8/3.
  */
+@Data
 @Entity
 @DynamicUpdate
-@Data
 @Accessors(chain = true)
 public class OrderDetails{
 
@@ -31,6 +32,10 @@ public class OrderDetails{
     private Integer productQuantity;
 
     private String productIcon;
+
+    private Date createTime;
+
+    private Date updateTime;
 
     public OrderDetails() {
     }

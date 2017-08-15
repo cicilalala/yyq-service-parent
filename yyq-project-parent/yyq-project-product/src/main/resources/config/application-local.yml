@@ -6,9 +6,13 @@ spring:
     driverClassName: com.mysql.jdbc.Driver
   jpa:
     show-sql: true
+#    hibernate:
+#      ddl-auto: none
 
 # 返回结果不含null
   jackson:
     default-property-inclusion: non_null
+  freemarker:
+    cache: false
 server:
   context-path: /sell/

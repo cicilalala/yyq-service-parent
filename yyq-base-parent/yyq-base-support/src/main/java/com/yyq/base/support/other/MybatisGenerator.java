@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class MybatisGenerator {
 
-    private static final String MASTERDB = "jdbc:mysql://rm-2zezf1dl45yqvh4zzo.mysql.rds.aliyuncs.com:3306/vc-manager";
+    private static final String MASTERDB = "jdbc:mysql://localhost:3306/masterDB";
     private static final String CLUSTERDB = "jdbc:mysql://localhost:3306/clusterDB";
 
     public void mybatisGenerator(String tableName, String dataBase) {
